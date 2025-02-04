@@ -8,7 +8,6 @@ function msqi_power_product = calculate_product_msqi_power(msqi_data_adjusted, p
     end
     min_pow = 1- min (potencia_xyz_adjusted);
     potencia_xyz_adjusted_norm= min_pow + potencia_xyz_adjusted;
-    potencia_xyz_adjusted_norm = potencia_xyz_adjusted_norm.^2
     % Calcular el producto elemento por elemento
     msqi_power_product = msqi_data_adjusted .* potencia_xyz_adjusted_norm;
 end

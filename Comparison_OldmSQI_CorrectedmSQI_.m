@@ -1,8 +1,8 @@
 % Definir los nombres de los archivos para mSQI original y corregido
 % II:
-archivos_mSQI_original = {'mSQI_Top_NewII_Working_2024-10-16.txt.csv', 'mSQI_Top_NewII_Stairs_2024-10-16.txt.csv'};
-archivos_mSQI_corregido_arm = {'CorrectionmSQITopNewIIWorking20241016_csvPowerArmNewIIWorking20.csv', 'CorrectionmSQITopNewIIStairs20241016_csvPowerArmNewIIStairs2024.csv'};
-archivos_mSQI_corregido_sternum = {'CorrectionmSQITopNewIIWorking20241016_csvPowerSternumNewIIWorki.csv', 'CorrectionmSQITopNewIIStairs20241016_csvPowerSternumNewIIStairs.csv'}; 
+archivos_mSQI_original = {'mSQI_Top_NewIII_Walking_2024-10-18.txt.csv', 'mSQI_Top_NewII_Stairs_2024-10-16.txt.csv'};
+archivos_mSQI_corregido_arm = {'CorrectionmSQITopNewIIIWalking20241018_csvPowerArmNewIIIWalking.csv', 'CorrectionmSQITopNewIIStairs20241016_csvPowerArmNewIIStairs2024.csv'};
+archivos_mSQI_corregido_sternum = {'CorrectionmSQITopNewIIIWalking20241018_csvPowerSternumNewIIIWal.csv', 'CorrectionmSQITopNewIIStairs20241016_csvPowerSternumNewIIStairs.csv'}; 
 
 %III:
 %archivos_mSQI_original = {'mSQI_Top_NewIII_Working_2024-10-18.txt.csv', 'mSQI_Top_NewIII_Stairs_2024-10-18.txt.csv'};

@@ -36,7 +36,7 @@ function resultados = procesar_acelerometro(posicion_x, posicion_y, posicion_z, 
         potencia_z = mean(ventana_z .^ 2);
 
         potencia_total_xyz = potencia_x + potencia_y + potencia_z;
-        resultados(indice_resultados, :) = [potencia_x, potencia_y, potencia_z, potencia_total_xyz];
+        resultados(indice_resultados, :) = [sqrt(potencia_x), sqrt(potencia_y), sqrt(potencia_z), sqrt(potencia_total_xyz)];
         indice_resultados = indice_resultados + 1;
     end
 end
