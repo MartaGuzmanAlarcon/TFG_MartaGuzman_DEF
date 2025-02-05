@@ -35,13 +35,13 @@ Main Scripts in this repository:
     CorrectionMSQI.m: procesa archivos de mSQI y potencia,los prepara para calculate_product_msqi_power.m, guarda los resultados en archivos CSV, y guarda listado de los nombres de archivos generados en CSV.
     calculate_product_msqi_power: hace la corrección como tal.
 
-**Correlation_Arm_Sternum.m:** calcula la correlacion entre arm y sternum
+**Correlation_Arm_Sternum.m:** calcula la correlacion entre arm y sternum.
 
 **Def_mSQI_CI_Median.m:**
 -Importar y procesar datos ECG.
 -Calcular mSQI.
 -Guardar resultados.
--Calcular intervalos de confianza entre registros usando `estimateCIMedian` y `estimateCIMean`.
+-Calcular intervalos de confianza entre registros usando estimateCIMedian y estimateCIMean.
 -Generar histogramas de mSQI para cada registro de ambos tipos de electrodos.
 
 
