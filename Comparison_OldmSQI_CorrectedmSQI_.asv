@@ -43,15 +43,15 @@ resultado_corregido_sternum = (max_corregido_sternum - min_corregido_sternum) / 
 diferencia_arm = resultado_original - resultado_corregido_arm;
 diferencia_sternum = resultado_original - resultado_corregido_sternum;
 
-% Crear la tabla de resultados reestructurada con diferencias al lado
+% Crear tabla de resultados
 resultados = {
-    'mSQI Original', max_original, min_original, resultado_original, NaN;
-    'mSQI Corregido (Arm)', max_corregido_arm, min_corregido_arm, resultado_corregido_arm, diferencia_arm;
-    'mSQI Corregido (Sternum)', max_corregido_sternum, min_corregido_sternum, resultado_corregido_sternum, diferencia_sternum;
+    'mSQI Original', max_original, min_original, resultado_original, '-', '-';
+    'mSQI Corregido (Arm)', max_corregido_arm, min_corregido_arm, resultado_corregido_arm, diferencia_arm, '-';
+    'mSQI Corregido (Sternum)', max_corregido_sternum, min_corregido_sternum, resultado_corregido_sternum, '-', diferencia_sternum;
 };
 
-nombres_columnas = {'Type', 'Max', 'Min', 'Result', 'Differences'};
-tabla_resultados = cell2table(resultados, 'VariableNames', nombres_columnas);
-
+nombres_columnas = {'Type', 'Max', 'Min', 'Result', 'Diff_Original_Arm', 'Diff_Original_Sternum'};
+tabla_resultados = cell2table(resultados, 'VariableNames', nombres_columnas); 
+ 
 % Guardar los resultados en un CSV
 writetable(tabla_resultados, 'Comparison_mSQI_mSQIcorrected.csv');
