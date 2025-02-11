@@ -3,7 +3,7 @@
 % % Este script se encarga de organizar y comparar las métricas mSQI original
 % y corregido (tanto para brazo como esternón) a lo largo de un intervalo de tiempo.
 %
-% Se requiere definit:
+% Se requiere definir:
 % 1. Archivos que se quieran analizar
 % 2. Un vector de tiempo 
 % 3. frecuencia
