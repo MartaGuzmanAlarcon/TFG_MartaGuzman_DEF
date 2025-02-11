@@ -1,5 +1,5 @@
 
-% Esta función recibe un grupo de archivos (file_group) ya analiza datos de los acelerómetros, 
+% Esta función recibe un grupo de archivos (file_group) y analiza datos de los acelerómetros, 
 % los procesa para calcular las potencias en los ejes x, y, z, la potencia
 % total en cada eje, y guarda estos resultados en archivos CSV. La función también limita los datos 
 % a un rango de tiempo especificado y utiliza las calibraciones predefinidas para los acelerómetros.

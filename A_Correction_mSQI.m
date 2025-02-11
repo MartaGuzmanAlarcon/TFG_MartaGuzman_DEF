@@ -34,7 +34,7 @@ function nombres_archivos_resultado = A_Correction_mSQI(msqi_files, potencia_fil
         % Multiplicar los datos de mSQI con la potencia ajustada
         producto = calculate_product_msqi_power(msqi_data_adjusted, potencia_xyz_adjusted);
         
-        % Crear un nombre único para el archivo de salida (removiendo caracteres problemáticos)
+        % Crear un nombre único para el archivo de salida (quitando caracteres problemáticos)
         output_filename = sprintf('Correction_%s_%s_%s.csv', ...
             strrep(msqi_filename, '.csv', ''), strrep(potencia_filename, '.csv', ''), tipo);
         
