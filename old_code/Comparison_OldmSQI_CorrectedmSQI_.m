@@ -12,7 +12,8 @@ medias_msqi_original = zeros(1, num_archivos);
 medias_msqi_corregido_arm = zeros(1, num_archivos);
 medias_msqi_corregido_sternum = zeros(1, num_archivos);
 
-% Leer los datos y calcular la media por archivo
+% Leer los datos y calcular la media por archivo -> archivo orginal y
+% coge mx y min
 for i = 1:num_archivos
     medias_msqi_original(i) = calcularMedia(archivos_mSQI_original(i));
     medias_msqi_corregido_arm(i) = calcularMedia(archivos_mSQI_corregido_arm(i));
@@ -43,15 +44,15 @@ resultado_corregido_sternum = (max_corregido_sternum - min_corregido_sternum) / 
 diferencia_arm = resultado_original - resultado_corregido_arm;
 diferencia_sternum = resultado_original - resultado_corregido_sternum;
 
-% Crear tabla de resultados
+% Crear la tabla de resultados reestructurada con diferencias al lado
 resultados = {
-    'mSQI Original', max_original, min_original, resultado_original, '-', '-';
-    'mSQI Corregido (Arm)', max_corregido_arm, min_corregido_arm, resultado_corregido_arm, diferencia_arm, '-';
-    'mSQI Corregido (Sternum)', max_corregido_sternum, min_corregido_sternum, resultado_corregido_sternum, '-', diferencia_sternum;
+    'mSQI Original', max_original, min_original, resultado_original, NaN;
+    'mSQI Corregido (Arm)', max_corregido_arm, min_corregido_arm, resultado_corregido_arm, diferencia_arm;
+    'mSQI Corregido (Sternum)', max_corregido_sternum, min_corregido_sternum, resultado_corregido_sternum, diferencia_sternum;
 };
 
-nombres_columnas = {'Type', 'Max', 'Min', 'Result', 'Diff_Original_Arm', 'Diff_Original_Sternum'};
-tabla_resultados = cell2table(resultados, 'VariableNames', nombres_columnas); 
- 
+nombres_columnas = {'Type', 'Max', 'Min', 'Result', 'Differences'};
+tabla_resultados = cell2table(resultados, 'VariableNames', nombres_columnas);
+
 % Guardar los resultados en un CSV
 writetable(tabla_resultados, 'Comparison_mSQI_mSQIcorrected.csv');
