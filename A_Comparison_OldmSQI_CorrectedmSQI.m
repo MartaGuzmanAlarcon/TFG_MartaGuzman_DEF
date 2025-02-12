@@ -61,18 +61,18 @@ function A_Comparison_OldmSQI_CorrectedmSQI(mSQI_files_top,corrected_files_ester
 
     % Crear la tabla de resultados reestructurada con diferencias al lado
     resultados = {
-        'mSQI Original', max_original, min_original, resultado_original, NaN;
-        'mSQI Corregido (Arm)', max_corregido_arm, min_corregido_arm, resultado_corregido_arm, diferencia_arm;
-        'mSQI Corregido (Sternum)', max_corregido_sternum, min_corregido_sternum, resultado_corregido_sternum, diferencia_sternum;
+        mSQI_files_top(1).file_name, mSQI_files_top(2).file_name,'mSQI Original', max_original, min_original, resultado_original, NaN;
+        mSQI_files_top(1).file_name, mSQI_files_top(2).file_name,'mSQI Corregido (Arm)', max_corregido_arm, min_corregido_arm, resultado_corregido_arm, diferencia_arm;
+        mSQI_files_top(1).file_name, mSQI_files_top(2).file_name,'mSQI Corregido (Sternum)', max_corregido_sternum, min_corregido_sternum, resultado_corregido_sternum, diferencia_sternum;
     };
 
-    nombres_columnas = {'Type', 'Max', 'Min', 'Result', 'Differences'};
+    nombres_columnas = {'File1','File2', 'Type', 'Max', 'Min', 'Result', 'Differences'};
     tabla_resultados = cell2table(resultados, 'VariableNames', nombres_columnas);
 
      % Crear un nombre de archivo único utilizando la fecha y hora actual
-    fecha_hora = datestr(now, 'yyyy-mm-dd_HH-MM-SS');
-    filename = sprintf('Comparison_mSQI_mSQIcorrected_%s.csv', fecha_hora);
+    %fecha_hora = datestr(now, 'yyyy-mm-dd_HH-MM-SS');
+    %filename = sprintf('Comparison_mSQI_mSQIcorrected.csv');
 
     % Guardar los resultados en un CSV
-    writetable(tabla_resultados, filename);
+    writetable(tabla_resultados, 'Comparison_mSQI_mSQIcorrected.csv','WriteMode','append');
 end
