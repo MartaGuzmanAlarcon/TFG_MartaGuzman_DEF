@@ -11,7 +11,20 @@
 % Salida: Se genera una tabla de resultados que compara las métricas y sus diferencias.
 %
 
-files = {{'NewI_Working_2024-10-16.txt', 'NewI_Stairs_2024-10-16.txt'}, {'NewII_Working_2024-10-16.txt', 'NewII_Stairs_2024-10-16.txt'}};
+files = {{'NewI_Working_2024-10-16.txt', 'NewI_Stairs_2024-10-16.txt'},
+    {'NewI_Rest_2024-10-16.txt', 'NewI_Walking_2024-10-16.txt'},
+
+    {'NewII_Working_2024-10-16.txt', 'NewII_Stairs_2024-10-16.txt'},
+    {'NewII_Rest_2024-10-16.txt', 'NewII_Walking_2024-10-16.txt'},
+
+    {'NewIII_Working_2024-10-18.txt', 'NewIII_Stairs_2024-10-18.txt'},
+    {'NewIII_Rest_2024-10-18.txt', 'NewIII_Walking_2024-10-18.txt'},
+
+    {'Trabajando_2024-09-21.txt', 'Escaleras_2024-09-21.txt'},
+    {'Reposo_2024-09-21.txt', 'Andando_2024-09-21.txt'},
+
+    {'WorkingII_2024-09-24.txt', 'StairsII_2024-09-24.txt'},
+    {'RestII_2024-09-24.txt', 'WalkingII_2024-09-24.txt'}};
 
 frecuencia_original = 1000;
 %time_vector = 1:(((7*60 + 59)*60)*frecuencia_original - 360000); % 8h
