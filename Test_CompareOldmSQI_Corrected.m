@@ -13,3 +13,18 @@ files={{'...'},{'mSQI_Top_NewIII_Working_2024-10-18.txt.csv', 'mSQI_Top_NewIII_S
    Compare_OldmSQI_CorrectedmSQI(files)
 
 Compare_OldmSQI_CorrectedmSQI(archivos_mSQI_original, archivos_mSQI_corregido_arm, archivos_mSQI_corregido_sternum)
+
+{'NewI_Working_2024-10-16.txt', 'NewI_Stairs_2024-10-16.txt'},
+{'NewI_Rest_2024-10-16.txt', 'NewI_Walking_2024-10-16.txt'},
+
+{'NewII_Working_2024-10-16.txt', 'NewII_Stairs_2024-10-16.txt'},
+{'NewII_Rest_2024-10-16.txt', 'NewII_Walking_2024-10-16.txt'},
+
+{'NewIII_Working_2024-10-18.txt', 'NewIII_Stairs_2024-10-18.txt'},
+{'NewIII_Rest_2024-10-18.txt', 'NewIII_Walking_2024-10-18.txt'},
+
+{'Trabajando_2024-09-21.txt', 'Escaleras_2024-09-21.txt'},
+{'Reposo_2024-09-21.txt', 'Andando_2024-09-21.txt'},
+
+{'WorkingII_2024-09-24.txt', 'StairsII_2024-09-24.txt'},
+{'RestII_2024-09-24.txt', 'WalkingII_2024-09-24.txt'}
