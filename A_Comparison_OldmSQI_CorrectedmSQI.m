@@ -90,31 +90,35 @@ for i = 1:length(mSQI_files_top)
     desviacion_original = std(datos_original(datos_original ~= 0));
     p10_original = prctile(datos_original, 10);
     p90_original = prctile(datos_original, 90);
-    metric_original = (p90_original - p10_original) / p10_original;
+    metric1_original = (p90_original - p10_original) / p10_original;
+    metric2_original = (p90_original - p10_original);
+
 
     promedio_corregido_arm = mean(datos_corregido_arm(datos_corregido_arm ~= 0));
     desviacion_corregido_arm = std(datos_corregido_arm(datos_corregido_arm ~= 0));
     p10_corregido_arm = prctile(datos_corregido_arm, 10);
     p90_corregido_arm = prctile(datos_corregido_arm, 90);
-    metric_corregido_arm = (p90_corregido_arm - p10_corregido_arm) / p10_corregido_arm;
+    metric1_corregido_arm = (p90_corregido_arm - p10_corregido_arm) / p10_corregido_arm;
+    metric2_corregido_arm = (p90_corregido_arm - p10_corregido_arm);
 
     promedio_corregido_sternum = mean(datos_corregido_sternum(datos_corregido_sternum ~= 0));
     desviacion_corregido_sternum = std(datos_corregido_sternum(datos_corregido_sternum ~= 0));
     p10_corregido_sternum = prctile(datos_corregido_sternum, 10);
     p90_corregido_sternum = prctile(datos_corregido_sternum, 90);
-    metric_corregido_sternum = (p90_corregido_sternum - p10_corregido_sternum) / p10_corregido_sternum;
+    metric1_corregido_sternum = (p90_corregido_sternum - p10_corregido_sternum) / p10_corregido_sternum;
+    metric2_corregido_sternum = (p90_corregido_sternum - p10_corregido_sternum);
 
 
 
     % Añadir los resultados a la celda para la tabla
     resultados_metrics = [resultados_metrics;
-        {mSQI_files_top(i).file_name, 'mSQI Original', promedio_original, desviacion_original, metric_original};
-        {mSQI_files_top(i).file_name, 'mSQI Corregido (Arm)', promedio_corregido_arm, desviacion_corregido_arm, metric_corregido_arm};
-        {mSQI_files_top(i).file_name, 'mSQI Corregido (Sternum)', promedio_corregido_sternum, desviacion_corregido_sternum, metric_corregido_sternum}];
+        {mSQI_files_top(i).file_name, 'mSQI Original', promedio_original, desviacion_original, p10_original,p90_original,metric1_original, metric2_original};
+        {mSQI_files_top(i).file_name, 'mSQI Corregido (Arm)', promedio_corregido_arm, desviacion_corregido_arm, p10_corregido_arm,p90_corregido_arm,metric1_corregido_arm,metric2_corregido_arm};
+        {mSQI_files_top(i).file_name, 'mSQI Corregido (Sternum)', promedio_corregido_sternum, desviacion_corregido_sternum, p10_corregido_sternum, p90_corregido_sternum,metric1_corregido_sternum, metric2_corregido_sternum}];
 end
 
 % Crear la segunda tabla con los resultados
-nombres_columnas_metrics = {'Files', 'Type', 'Mean', 'StdDev', 'Metric (90%-10%)/10%'};
+nombres_columnas_metrics = {'Files', 'Type', 'Mean', 'StdDev', 'p10', 'p90', 'Metric (90%-10%)/10%', 'Metric (90%-10%)'};
 tabla_metrics = cell2table(resultados_metrics, 'VariableNames', nombres_columnas_metrics);
 
 % Guardar la segunda tabla en un archivo CSV
