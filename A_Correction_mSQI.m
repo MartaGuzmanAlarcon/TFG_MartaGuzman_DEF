@@ -36,8 +36,8 @@ function nombres_archivos_resultado = A_Correction_mSQI(msqi_files, potencia_fil
         producto = calculate_product_msqi_power(msqi_data_adjusted, potencia_xyz_adjusted);
         
         % Crear un nombre único para el archivo de salida (quitando caracteres problemáticos)
-        output_filename = sprintf('Correction_%s_%s_%s.csv', ...
-            strrep(msqi_filename, '.csv', ''), strrep(potencia_filename, '.csv', ''), tipo);
+        output_filename = sprintf('Correction_mSQI_%s_%s.csv', ...
+             strrep(potencia_filename, '.csv', ''), tipo);
         
         % Guardar el resultado en CSV
         guardarEnCSV(output_filename, producto, {'ResultsCorrections'});
@@ -48,7 +48,9 @@ function nombres_archivos_resultado = A_Correction_mSQI(msqi_files, potencia_fil
     end
 
     % Guardar todos los nombres de los archivos generados
-    writetable(table(nombres_archivos_resultado'), sprintf('Corrections_%s_FileNames.csv', tipo), 'WriteVariableNames', false);
+% Guardar todos los nombres de los archivos generados correctamente en una sola columna
+writetable(table(unique(nombres_archivos_resultado(:))), sprintf('Corrections_%s_FileNames.csv', tipo), ...
+           'WriteVariableNames', false, 'WriteMode', 'append');
     
     % Mostrar mensaje de confirmación
     disp(['Corrección completada para ' tipo]);

@@ -1,0 +1,27 @@
+% Procesa múltiples archivos CSV que contienen nombres de archivos para usarlos luego en analisis grafico
+
+% Definir combinaciones de archivos
+files = {'mSQI_FileNames.csv', 'Power_Arm_FileNames.csv', ...
+         'Corrections_Sternum_FileNames.csv', 'Corrections_Arm_FileNames.csv'};
+
+% Leer los datos sin eliminar duplicados
+numFiles = length(files);
+data = cell(1, numFiles);
+
+for i = 1:numFiles
+    % Leer CSV sin modificar su contenido
+    tempData = readtable(files{i}, 'ReadVariableNames', false);
+    data{i} = tempData{:,1}; % Extraer primera columna
+end
+
+% Determinar el número máximo de filas a procesar
+maxRows = min(cellfun(@length, data));
+
+% Procesar filas
+for row = 1:maxRows
+    args = cell(1, numFiles);
+    for i = 1:numFiles
+        args{i} = data{i}{row}; % Acceder correctamente al elemento
+    end
+    procesar_datosGraficas(args{:}); % Llamar función con los archivos correspondientes
+end

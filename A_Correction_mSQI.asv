@@ -48,7 +48,10 @@ function nombres_archivos_resultado = A_Correction_mSQI(msqi_files, potencia_fil
     end
 
     % Guardar todos los nombres de los archivos generados
-    writetable(table(nombres_archivos_resultado'), sprintf('Corrections_%s_FileNames.csv', tipo), 'WriteVariableNames', false);
+writetable(cell2table(nombres_archivos_resultado), 'mSQI_FileNames.csv', ...
+           'WriteVariableNames', false, 'WriteMode', 'append');
+
+    writetable(table(nombres_archivos_resultado'), sprintf('Corrections_%s_FileNames.csv', tipo),  'WriteVariableNames', false, 'WriteMode', 'append');
     
     % Mostrar mensaje de confirmación
     disp(['Corrección completada para ' tipo]);
