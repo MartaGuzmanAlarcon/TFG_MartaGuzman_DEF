@@ -20,8 +20,6 @@ files = {
     {'II_Rest_Stairs_2025-02-21.txt', 'II_Rest_Working_2025-02-21.txt'},
     {'II_Rest_Walking_2025-02-21.txt', 'II_Rest_Working_2025-02-21.txt'},
 
-
-
     };
 
 frecuencia_original = 1000;

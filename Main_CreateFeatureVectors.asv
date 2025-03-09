@@ -1,0 +1,33 @@
+
+
+
+% Definir archivos para registros cortos y largos
+files_cortos = {'mSQI_FileNames.csv', 'Power_Arm_FileNames.csv', 'Power_Sternum_FileNames.csv'};
+files_largos = {'L_mSQI_FileNames.csv', 'L_Power_Arm_FileNames.csv', 'L_Power_Sternum_FileNames.csv'};
+
+% Crear una estructura con los tipos de archivos y su respectivo register_type
+file_groups = {files_largos, 0; files_cortos, 1}; % 0 = largo, 1 = corto
+
+% Procesar ambos tipos de registros
+for k = 1:size(file_groups, 1)
+    files = file_groups{k, 1};  % Seleccionar conjunto de archivos
+    register_type = file_groups{k, 2}; % Definir si es largo o corto
+
+    % Cargar los datos de los archivos CSV
+    data = cell(size(files));
+    for i = 1:length(files)
+        data{i} = readtable(files{i}, 'ReadVariableNames', false, 'Delimiter', '');
+    end
+
+    % Obtener el número de filas
+    nRows = height(data{1});
+
+    % Procesar cada fila
+    toProcess = cell(1, length(files));
+    for i = 1:nRows
+        for j = 1:length(files)
+            toProcess{j} = data{j}{i, 1}{1}; % Cargar cada archivo para cada fila
+        end
+        createFeatureVector(toProcess{:}, register_type); % Llamar a la función con los parámetros
+    end
+end

@@ -19,8 +19,8 @@ function procesar_datosGraficas(archivo_msqi, archivo_corrected_Arm, archivo_cor
     power_Sternum = power_Sternum(:,4);
 
     % Calcular diferencias
-    Diff_Arm = msqi_original - corrected_msqi_Arm;
-    Diff_Sternum = msqi_original - corrected_msqi_Sternum;
+    Diff_Arm = corrected_msqi_Arm-msqi_original ;
+    Diff_Sternum = corrected_msqi_Sternum-msqi_original ;
 
     % Crear tabla final con nombres de columnas adecuados
     tabla_final = table(msqi_original, corrected_msqi_Arm, corrected_msqi_Sternum, ...

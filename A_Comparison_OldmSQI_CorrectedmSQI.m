@@ -57,8 +57,8 @@ resultado_original = (max_original - min_original) / max(min_original, eps);
 resultado_corregido_arm = (max_corregido_arm - min_corregido_arm) / max(min_corregido_arm, eps);
 resultado_corregido_sternum = (max_corregido_sternum - min_corregido_sternum) / max(min_corregido_sternum, eps);
 
-diferencia_arm = resultado_original - resultado_corregido_arm;
-diferencia_sternum = resultado_original - resultado_corregido_sternum;
+diferencia_arm =resultado_corregido_arm- resultado_original;
+diferencia_sternum = resultado_corregido_sternum-resultado_original ;
 
 % Crear la primera tabla con File1 y File2
 resultados_comparison = {
