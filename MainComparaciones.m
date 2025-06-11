@@ -27,5 +27,5 @@ frecuencia_original = 1000;
 time_vector = 1:(8*60)*frecuencia_original;  % 8mins
 
 % Llamar a la función que organiza todo el flujo de trabajo
-A_Compare_OldmSQI_CorrectedmSQI(files, time_vector);
+´(files, time_vector);
 
