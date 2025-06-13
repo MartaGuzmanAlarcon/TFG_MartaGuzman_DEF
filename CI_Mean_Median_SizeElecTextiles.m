@@ -13,7 +13,7 @@
 %
 
 % PARAMETERS
-comparisonMode = 'ElectrodeSize'; % Options: 'ElectrodeSize' or 'Fabric'
+comparisonMode = 'Fabric'; % Options: 'ElectrodeSize' or 'Fabric'
 testMode = 1; % 1:5mins; 0:8h;
 alphaLevel = 0.01; % significance level
 bootstrapIterations = 1000; % bootstrap iterations
@@ -42,10 +42,10 @@ elseif strcmp(comparisonMode, 'Fabric')
         ecgTimeVector = 1:(((7*60 + 59)*60)*fs - 360000);
     end
      %groupType:
-    filesFabric1 = {'Top2_R1_2024-11-21.txt', 'Top2_R2_2024-11-22.txt', 'Top2_R3_2024-11-25.txt', 'Top2_R4_2024-12-09hr.txt'};
+    filesFabric1 = {'Top2_R1_2024-11-21.txt', 'Top2_R2_2024-11-22.txt', 'Top2_R3_2024-11-25.txt', 'Top2_R4_2024-12-09.txt'};
     filesFabric2 = {'TopS_R1_2024-04-04.txt', 'TopS_R2_2024-04-12.txt', 'TopS_R3_2024-04-16.txt', 'TopS_R4_2024-04-23.txt'};
     filesFabric3 = {'Top1_R1_Registro8h_2024-11-04.txt', 'Top1_R2_Registro8h_2024-11-05.txt', 'Top1_R3_2024-11-07.txt', 'Top1_R4_2024-11-18.txt'};
-    groupsFileSets = {filesFabric1, filesFabric2, filesFabric3};
+    groupsFileSets = {filesFabric1, filesFabric3};
     groupLabels = {'Fabric1', 'Fabric2', 'Fabric3'};
 end
 

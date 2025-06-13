@@ -8,7 +8,7 @@ if size(mSQI) ~= size(power)
 end
 
 % Configuración de parámetros
-epsilon = 0;%0.5;  % Evitar división por cero
+epsilon = 0.1;%0.5;  % Evitar división por cero
 percentil_value = 10;  % Percentil para umbral de potencia
 percentil_30 = prctile(mSQI, 30);
 percentil_70 = prctile(mSQI, 70);
@@ -36,5 +36,5 @@ weight = weight + (0.2 * (maximum > 0.85)); % Aumenta peso si el máximo es alto
 intermediate_boost = 1+0.2 * (mSQI > percentil_30 & mSQI < percentil_70)  % Pequeño empuje extra
 % Aplicación de la corrección
     %mSQI_corrected = mSQI + weight .* correction_factor + (intermediate_boost .* (1-(mSQI-percentil_10)));  
-    mSQI_corrected = mSQI + weight .* correction_factor *intermediate_boost;  
+    mSQI_corrected = mSQI + weight .* correction_factor .*intermediate_boost;  
 end
