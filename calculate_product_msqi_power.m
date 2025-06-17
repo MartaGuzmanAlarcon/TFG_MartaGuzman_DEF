@@ -1,6 +1,8 @@
 % Multiplca la potencia y msqi ajustando vectores de dichos valores
 % devuelve el msqi corregido
 
+%R1_Electr_S_2025-03-10.txt
+
 function mSQI_corrected = calculate_product_msqi_power(mSQI, power)
 % Verificar que las dimensiones de las matrices coincidan
 if size(mSQI) ~= size(power)
@@ -36,5 +38,7 @@ weight = weight + (0.2 * (maximum > 0.85)); % Aumenta peso si el máximo es alto
 intermediate_boost = 1+0.2 * (mSQI > percentil_30 & mSQI < percentil_70)  % Pequeño empuje extra
 % Aplicación de la corrección
     %mSQI_corrected = mSQI + weight .* correction_factor + (intermediate_boost .* (1-(mSQI-percentil_10)));  
-    mSQI_corrected = mSQI + weight .* correction_factor .*intermediate_boost;  
+    mSQI_corrected = mSQI + weight .* correction_factor .*intermediate_boost; 
+    if(mSQI_corrected>2.0)
+        print(mSQI_corrected)
 end
